@@ -2,15 +2,12 @@ import os
 from tqdm import tqdm
 import subprocess
 import whisper
-
-
-def get_filename(file):
-    return file.split(".")[0]
+import utils
 
 
 def video_to_audio(video_dir, audio_dir, ext="mp3") -> None:
     for video_file in tqdm(os.listdir(video_dir)):
-        filename = get_filename(video_file)
+        filename = utils.get_filename(video_file)
         subprocess.call(
             [
                 "ffmpeg",
@@ -23,7 +20,7 @@ def video_to_audio(video_dir, audio_dir, ext="mp3") -> None:
 
 def audio_to_transcript(audio_dir, transcript_dir, model) -> None:
     for audio_file in tqdm(os.listdir(audio_dir)):
-        filename = get_filename(audio_file)
+        filename = utils.get_filename(audio_file)
         transcript = model.transcribe(os.path.join(audio_dir, audio_file))
 
         with open(os.path.join(transcript_dir, f"{filename}.txt"), "w") as file:
