@@ -1,6 +1,6 @@
 from pathlib import Path
 
-VECTOR_DIR = Path("vectorstore")
+VECTOR_DIR = Path("data/cache/vectorstore")
 
 
 def connect_to_vector_db(index_name: str, embedding_engine):
@@ -31,7 +31,7 @@ def create_vector_db(index_name: str, embedding_engine, documents: list, metadat
     return index
 
 
-def prep_documents_for_vecstore(documents: list) -> tuple[list, list]:
+def prep_documents_for_vecstore(documents: list):
     from langchain.text_splitter import RecursiveCharacterTextSplitter
 
     text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
