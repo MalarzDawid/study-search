@@ -1,0 +1,11 @@
+black==23.3.0
+faiss-cpu==1.7.4
+fastapi==0.95.1
+isort==5.12.0
+langchain==0.0.169
+openai==0.27.6
+pymongo==4.3.3
+python-dotenv==1.0.0
+requests==2.30.0
+streamlit==1.22.0
+uvicorn==0.22.0
