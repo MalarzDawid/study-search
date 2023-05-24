@@ -8,8 +8,8 @@ from langchain.chains.qa_with_sources import load_qa_with_sources_chain
 from langchain.llms import OpenAI
 from pydantic import BaseModel
 
-import utils
-import vecstore
+from utils import utils
+import stores.vecstore as vecstore
 
 
 # Simple query model
