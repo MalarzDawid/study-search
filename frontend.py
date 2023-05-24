@@ -1,7 +1,10 @@
-import streamlit as st
-from utils import get_response, load_config
+import os
 
-config = load_config("config.yaml")
+import requests
+import streamlit as st
+from dotenv import load_dotenv
+
+load_dotenv()
 
 st.title("Study-Search 📝")
 
@@ -10,8 +13,7 @@ with st.form("form"):
     submitted = st.form_submit_button("Submit")
 
     if submitted:
-        response = get_response(input_data, config["BACKEND"]).json()
-
-        for item in response:
-            c = st.expander(label=str(item["meta"]["page"]))
-            c.write(item["content"])
+        response = requests.post(
+            os.environ["BACKEND"], json={"query": input_data}
+        ).json()
+        st.write(response["answer"])
