@@ -18,8 +18,8 @@ Ultimately, this project utilizes artificial intelligence technology to automate
 - LangChain: 🦜
 - OpenAI: 🧠
 
-### Overview
-
+## Overview
+<img src="images/overview.png">
 
 ## Installation guide:
 
@@ -45,7 +45,14 @@ EMBEDDINGS_PICKLE="emb.pkl"
 CACHE_DIR="data/cache"
 ```
 
-### Run APP
+## Run APP
+
+##### Backend
 ```shell
 make backend
+```
+
+##### Frontend
+```shell
+make frontend
 ```

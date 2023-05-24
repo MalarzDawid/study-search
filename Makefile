@@ -16,4 +16,4 @@ dev_env: ## installs all required environment for development
 	pip install -r requirements-dev.txt
 
 frontend: ## run streamlit with basic frontend page
-	streamlit run forntend.py
+	streamlit run frontend.py
